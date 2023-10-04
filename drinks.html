@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+        <div class="hd-menu">
+            <div class="logo">
+                <a href="index.html">
+                <img src="img/logo_whitecup.svg" alt="coffeelogo"></a>
+            </div>
+            
+            <div class="btn"><a href="history.html">About</a></div>
+            <div class="btn"><a href="drinks.html">Drinks</a></div>
+           
+        </div>
+    </header>
+    <aside class="badge">
+        <div id="bd1"class="bd active"><img src="img/character.png" width="75" height="75" alt=""></div>
+        <div id="bd2" class="bd"><img src="img/character_pink.png" width="75" height="75"  alt=""></div>
+        <div id="bd3"class="bd"><img src="img/character_1.png" width="75" height="75"  alt=""></div> 
+    </aside>
+    <main>
+        <article class="lec">
+            <h1>Types of Coffee Drinks</h1>
+                <h3>The five beverages below are the most popular among the various coffee drink menus.</h3>
+            <div class="drinks-arc">
+                    <div class="dr1">
+                        <div class="drimg">
+                            <img src="img/americano.png" alt="americano">
+                            <span>Americano</span>
+                        </div>
+                        <div class="drimg">
+                            <img src="img/cafe_latte.png" alt="cafe_latte">
+                            <span>Cafe Latte</span>
+                        </div>
+                        <div class="drimg">
+                            <img src="img/cappucino.png" alt="cappucino">
+                            <span>Cappucino</span>
+                            </div>
+                        </div>
+                    <div class="dr2">
+                        <div class="drimg2">
+                            <img src="img/con_panna.png" alt="con_panna">
+                            <span>Con Panna</span>
+                        </div>
+                        <div class="drimg2">
+                            <img src="img/mocha.png"alt="mocha">
+                            <span class="mocha">Mocha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnwrap">
+                    <button id="quizbtn">Ready to check knowledge?</button>
+                </div>
+            
+        </article>
+        
+        <article class="quiz">
+            <div>
+            <h4>Q. Select Con Panna drink below.</h3>
+            
+            <form action="">
+                <p>Please select one</p>
+                <input type="radio" id="c1" name="a1" value="w">
+                <label for="c1"><img src="img/cappucino.png" width="250" height="250" alt=""></label><br>
+                <input type="radio" id="c2" name="a1" value="w">
+                <label for="c2"><img src="img/mocha.png" width="250" height="300"alt=""></label><br>
+                <input type="radio" id="c3" name="a1" value="c">
+                <label for="c3"><img src="img/con_panna.png" width="250" height="300"alt=""></label>
+                <div class="btnwrap">
+                    <input type="button" value="Check Answer" id="checkbtn">
+                </div>
+            </form>
+            <div class="audio">
+                <audio id="correct" src="audio/ding-idea-40142.mp3"></audio>
+                <audio id="wrong" src="audio/error-2-36058.mp3"></audio>
+            </div>
+            <div class="correct">
+                <h4>Good job! You've complete the Drinks part.</h4>
+            </div>
+        <div class="wrong">
+            <h4>Try again</h4>
+        </div>
+        <div class="answerbtnwrap">
+            
+            <a class="answerbtn" href="howto.html">Go to Next!</a>
+        </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+         <span>Copyright &copy; JYTL Cooperation </span>
+    </footer>
+</body>
+<script>
+    var quiz = document.querySelector(".quiz");
+  
+  quizbtn.addEventListener("click", function(){
+      quiz.classList.add("active");
+  });
+  var btnshow = document.querySelector(".answerbtnwrap");
+  var badge1 = document.getElementById("bd1");
+    var badge2 = document.getElementById("bd2");
+    var badge3 = document.getElementById("bd3");
+    var cormsg = document.querySelector(".correct");
+    var wrgmsg = document.querySelector(".wrong");
+    var correct = document.getElementById("correct");
+    var wrong = document.getElementById("wrong");
+
+    checkbtn.addEventListener("click", function(){
+    var answer1 = document.querySelector('input[name="a1"]:checked').value;
+
+        if (answer1 == "c"){
+                console.log("Correct");
+                btnshow.classList.add("active");
+                badge2.classList.add("active");
+                cormsg.classList.add("active");
+                wrgmsg.classList.remove("active");
+                correct.play();
+                
+        }else{
+            wrong.play();
+            wrgmsg.classList.add("active");
+        }
+    });
+
+</script>
+</html>

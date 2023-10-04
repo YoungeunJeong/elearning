@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eLearning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+        <div class="hd-menu">
+            <div class="logo">
+                <a href="index.html">
+                <img src="img/logo_whitecup.svg" alt="coffeelogo"></a>
+            </div>
+            
+            <div class="btn"><a href="history.html">About</a></div>
+            <div class="btn"><a href="drinks.html">Drinks</a></div>
+
+            <div class="btn"><a href="howto.html">How to</a></div>
+            
+        </div>
+    </header>
+    <aside class="badge">
+        <div class="bd active"><img src="img/character.png" width="75" height="75" alt=""></div>
+        <div class="bd active"><img src="img/character_pink.png" width="75" height="75"  alt=""></div>
+        <div class="bd"><img src="img/character_1.png" width="75" height="75"  alt=""></div>
+    </aside>
+    <main>
+        <article class="lec">
+            <h1>How to make</h1>
+
+            <div class="howto-arc">
+                <h4>
+                    We need some supplies to make coffee. You need a coffee machine, a portafilter, a tamper, a milk frothing pitcher, several kinds of syrup (vanilla, hazelnut, mocha, etc.), toppings (whipped cream, ice cream, etc.), and a cup. These items are used for each type of coffee. 
+                </h4>
+                <p>
+                    Watch the video below and learn how to make coffee! 
+                </p>
+               <div class="vid">
+                <div class="vidwrap">
+                    <video src="video/coffeeSoundeffects.mp4" controls></video>
+                </div>
+<!--                 
+                <h3>Americano</h3>
+                <p>Ingredient: Coffee grounds, Hot water </p>
+               </div>
+               <div class="vid">
+                <div class="vidwrap">
+                    <video src="video/latteeffect.mp4" controls></video>
+                </div>
+                
+                <h3>Café latte </h3>
+                <p>Ingredient: Coffee grounds, Milk </p>
+               </div>
+               <div class="vid">
+                <div class="vidwrap">
+                    <video src="video/cappucinoeffect.mp4" controls></video>
+                    </div>
+                
+                <h3>Cappuccinos</h3>
+                <p>Ingredient: Coffee grounds, Milk </p>
+               </div>
+               <div class="vid">
+                
+                <div class="vidwrap">
+                    <video src="video/mochaeffects.mp4" controls></video>
+                </div>
+
+        
+                
+                <h3>Mocha</h3>
+                <p>Ingredient: Coffee grounds, Milk, Chocolate syrup, Whipped cream, (option: Java chip on the top) </p>
+               </div>
+               <div class="vid">
+                <div class="vidwrap">
+                    <video src="video/conpannaeffects.mp4" controls></video>
+                </div>
+                
+                
+                <h3>Con panna</h3>
+                <p>Ingredient: Coffee grounds, Whipped cream</p>
+               </div>
+            </div>-->
+            <div class="btnwrap">
+                <button id="quizbtn">Ready to check knowledge?</button>
+            </div> 
+        </article>
+        <article class="quiz">
+            <div class="howto">
+            <h4>Q. Choose all ingredients for mocha coffee.</h3>
+            
+            <form class="howtoquiz"action="">
+
+                <input type="checkbox" id="c1" name="a" value="c">
+                <label for="c1">
+                    <img src="img/whipcream.svg" width="150px" height="170px" alt=""><br>Whipped Cream</label>
+
+                <input type="checkbox" id="c2"name="a" value="w">
+                <label for="c2">
+                    <img src="img/water.png" width="150px" height="170px" alt=""><br>Water</label>
+
+                <input type="checkbox" id="c3"name="a" value="c">
+                <label for="c3"><img src="img/steamedmilk.png" width="150px" height="170px" alt=""><br>Steamed milk</label><br>
+
+                <input type="checkbox" id="c4" name="a" value="c">
+                <label for="c4"><img src="img/chocolate.png" width="150px" height="170px" alt=""><br>Chocolate</label>
+
+                <input type="checkbox" id="c5"name="a" value="c">
+                <label for="c5"><img src="img/espresso.png" width="150px" height="170px" alt=""><br>Espresso</label>
+
+                <div class="btnwrap">
+                    <input type="button" value="Check Answer" id="checkbtn">
+                </div>
+            </form>
+            <div class="audio">
+                <audio id="wrong" src="audio/error-2-36058.mp3"></audio>
+            </div>
+
+        <div class="wrong">
+            <h4>Try again</h4>
+            <h4>Hint: </h4>
+            <img src="img/hintimg.svg" width="150px" height="170px" alt="">
+        </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+         <span>Copyright &copy; JYTL Cooperation </span>
+    </footer>
+</body>
+<script>
+    var quiz = document.querySelector(".quiz");
+  
+    quizbtn.addEventListener("click", function(){
+        quiz.classList.add("active");
+        });
+    var btnshow = document.querySelector(".answerbtnwrap");
+    var wrgmsg = document.querySelector(".wrong");
+    var wrong = document.getElementById("wrong");
+    document.getElementById("checkbtn").onclick = validate;
+    function validate(){
+        var checkboxes = document.getElementsByName("a");
+        var checkboxChecked = [];
+        for(var i = 0; i < checkboxes.length; i++){
+            if(checkboxes[i].checked && (checkboxes[i].value === "c")){
+                checkboxChecked.push(checkboxes[i]);
+            }
+        }
+        if(checkboxChecked.length === 4) {
+            location.href="success.html"
+        } else {
+            wrong.play();
+            wrgmsg.classList.add("active");
+        }
+}
+</script>
+</html>

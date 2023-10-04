@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="hd-menu">
+            <div class="logo">
+                <a href="index.html">
+                <img src="img/logo_whitecup.svg" alt="coffeelogo"></a>
+            </div>
+            
+            <div class="btn"><a href="history.html">About</a></div>
+
+
+        </div>
+    </header>
+    <aside class="badge">
+        <div id="bd1"class="bd"><img src="img/character.png" width="75" height="75" alt="">
+        </div>
+        <div id="bd2" class="bd"><img src="img/character_pink.png" width="75" height="75" alt="">
+        </div>
+        <div id="bd3"class="bd"><img src="img/character_1.png" width="75" height="75" alt="">
+        </div> 
+    </aside>
+    <main>
+        <article class="lec">
+            <h1>About the Coffee</h1>
+            <div class="main-arc">
+                
+                <div class="main-img"><img src="img/coffee.jpg" alt="coffee" width="320" height="480">
+                </div>
+                <div class="main-para">
+                    
+                    <p>No one knows exactly how to have a coffee. But The legend has it in a faraway land which is present, say, Ethiopia, that a goat herder named Kaldi first discovered coffee by his goats consuming the berries of a shrub. The shrub was a coffee tree. As the goats consumed the berries, they got a burst of energy. Kaldi, the goat herder, noticed this and decided to try those berries himself. He, too, got a burst of energy. Recognizing this was special, He brought those berries to his local shaman. That shaman then took that coffee, threw it on fire, and we got the first cup of coffee. </p>
+
+                    <p>Now, it’s important to understand Ethiopia is the birthplace of all coffee. That Ethiopians did drink, consume, and use coffee regularly, it became a huge part of their culture, and they weren’t cultivating it for commercial purposes. The Ethiopians had never allowed any of their coffee to escape their country, and they’d still have a lock on coffee game worldwide.</p>
+                        
+                    <p>The first commercial coffee farm was in Yemen, where the production of coffee was intended to be sold, and this happened around 575 after the Death of God. They would boil the coffee seeds before they were allowed to be sold, meaning that people couldn’t germinate them and try replanting them in other places. The Mocha Java coffee comes from the port of Mocha in Yemen, where all the coffee is exported from.  
+                    </p>    
+                    <p>   By the early 15th century, coffee had spread to Persia, Egypt, Syria, and Turkey. </p>
+                </div>
+            </div>
+            <div class="audio">
+                <audio src="history.mp3" controls></audio>
+            </div>
+            <div class="btnwrap">
+                <button id="quizbtn">Ready to check knowledge?</button>
+            </div>
+            
+        </article>
+        <article class="quiz">
+            <div>
+                <h4>Q.Where is the birthplace of all coffee?</h3>
+
+                <div class="formwrap">
+                    <form name="form1" action="">
+                        <p>Please select one</p>
+                      <input type="radio" id="q11" name="a1" value="c">
+                      <label for="q11">Ethiopia</label>
+                      <input type="radio" id="q12" name="a1" value="w">
+                      <label for="q12">America</label>
+                      <input type="radio" id="q13" name="a1" value="w">
+                        <label for="q13">France</label>
+                    </form>
+                </div>
+                <h4>Q. Where is the first commercial coffee in the world? </h3>
+
+                    <div class="formwrap">
+                        <form name="form2" action="">
+                            <p>Please select one</p>
+                          <input type="radio" id="q21" name="a2" value="w">
+                          <label for="q21">SriLanka</label>
+                          <input type="radio" id="q22" name="a2" value="w">
+                          <label for="q22">Turkey</label>
+                          <input type="radio" id="q23" name="a2" value="c">
+                            <label for="q23">Yemen</label>
+                        </form>
+                    </div>
+                    <h4>Q. Why did Yemen have to boil the coffee sees before it sold? </h3>
+
+                        <div class="formwrap">
+                            <form name="form3" action="">
+                                <p>Please select one</p>
+                                <input type="radio" id="q31" name="a3" value="c">
+                                <label for="q31">People cannot replant them. </label><br>
+                                <input type="radio" id="q32" name="a3" value="w">
+                                <label for="q32">People want to have coffee cooked.</label><br>
+                                <input type="radio" id="q33" name="a3" value="w">
+                                <label for="q33">Yemen offers a unique way to their buyer. </label><br>
+                                <div class="btnwrap">
+                                    <input type="button" value="Check Answer" id="checkbtn">
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="audio">
+                            <audio id="correct" src="audio/ding-idea-40142.mp3"></audio>
+                            <audio id="wrong" src="audio/error-2-36058.mp3"></audio>
+                        </div>
+                        <div class="correct">
+                            <h4>Good job! You've complete the History part.</h4>
+                        </div>
+                    <div class="wrong">
+                        <h4>Try again</h4>
+                    </div>
+                    <div class="answerbtnwrap">
+                        
+                        <a class="answerbtn" href="drinks.html">Go to Next!</a>
+                    </div>
+            
+            </div>
+        </article>
+    </main>
+    <footer>
+         <span>Copyright &copy; JYTL Cooperation </span>
+    </footer>
+</body>
+<script>
+    var quiz = document.querySelector(".quiz");
+  
+    quizbtn.addEventListener("click", function(){
+        quiz.classList.add("active");
+    });
+
+    var btnshow = document.querySelector(".answerbtnwrap");
+  var badge1 = document.getElementById("bd1");
+    var badge2 = document.getElementById("bd2");
+    var badge3 = document.getElementById("bd3");
+    var cormsg = document.querySelector(".correct");
+    var wrgmsg = document.querySelector(".wrong");
+    var correct = document.getElementById("correct");
+    var wrong = document.getElementById("wrong");
+
+    checkbtn.addEventListener("click", function(){
+    var answer1 = document.querySelector('input[name="a1"]:checked').value;
+    var answer2 = document.querySelector('input[name="a2"]:checked').value;
+    var answer3 = document.querySelector('input[name="a3"]:checked').value;
+    var c1 = document.querySelector('input[name="a1"]');
+        if((answer1 == "c") && (answer2 =="c")&& (answer3 =="c")){
+            console.log("Correct");
+                btnshow.classList.add("active");
+                badge1.classList.add("active");
+                cormsg.classList.add("active");
+                wrgmsg.classList.remove("active");
+                correct.play();
+        }else{
+            wrong.play();
+            wrgmsg.classList.add("active");
+        }
+    });
+    
+</script>
+</html>
